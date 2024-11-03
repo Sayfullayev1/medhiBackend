@@ -11,7 +11,7 @@ app.get('/api/data', (req, res) => {
   const data = {
     message: 'Данные успешно получены',
     users: [
-      { username: 'user1', age: 25 },
+      { username: 'user111', age: 25 },
       { username: 'user2', age: 30 },
     ],
   };
