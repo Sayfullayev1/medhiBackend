@@ -18,7 +18,7 @@ app.get('/api/data', (req, res) => {
   res.json(data); // Отправляем данные обратно клиенту
 });
 
-// Запускаем сервер
+// Запускаем серверcd
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);
