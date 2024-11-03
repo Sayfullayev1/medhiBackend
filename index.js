@@ -10,6 +10,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
+
 // Middleware для проверки токена
 const authenticateToken = ((req, res, next) => {
   const token = req.headers['authorization']?.split(' ')[1]; // Извлекаем токен из заголовка
@@ -21,16 +23,6 @@ const authenticateToken = ((req, res, next) => {
     req.user = user; // Сохраняем информацию о пользователе в запросе
     next(); // Переходим к следующему middleware или обработчику
   });
-});
-
-// Пример маршрута для получения токена
-app.post('/api/login', (req, res) => {
-  // Здесь должна быть логика проверки пользователя
-  const username = req.body.username; // Получаем имя пользователя из тела запроса
-
-  // Создаем токен с помощью jwt.sign
-  const token = jwt.sign({ username }, process.env.JWT_SECRET, { expiresIn: '1h' });
-  res.json({ token }); // Возвращаем токен клиенту
 });
 
 // Пример защищенного маршрута для получения данных
