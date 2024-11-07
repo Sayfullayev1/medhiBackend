@@ -237,7 +237,7 @@ app.get('/schedule/B24T01', authenticateToken, (req, res) => {
 });
 
 // Запускаем сервер
-const PORT = 3068;
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);
 });
